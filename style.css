@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    background: #100817;
+
+    color: white;
+
+    font-family: "Playfair Display", serif;
+
+    overflow-x: hidden;
+
+}
+
+
+
+/* Main Page */
+
+.invitation-page {
+
+    min-height: 100vh;
+
+    padding: 60px 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+
+/* Main Container */
+
+.container {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    text-align: center;
+
+}
+
+
+
+/* =========================
+   HEADING
+========================= */
+
+.heading-box {
+
+    opacity: 0;
+
+    transform: translateY(100px);
+
+}
+
+
+
+.small-title {
+
+    color: #d8d8d8;
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+h1 {
+
+    color: #ffffff;
+
+    font-size: 48px;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.heading-box p {
+
+    color: #c8c1cc;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    margin-bottom: 35px;
+
+}
+
+
+
+/* =========================
+   BIRTHDAY CARD
+========================= */
+
+.birthday-card {
+
+    width: 100%;
+
+    opacity: 0;
+
+    transform: translateY(250px);
+
+}
+
+
+
+.birthday-card img {
+
+    width: 100%;
+
+    max-width: 600px;
+
+    height: auto;
+
+    display: block;
+
+    margin: auto;
+
+    border-radius: 18px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+
+}
+
+
+
+/* =========================
+   THEME NOTE
+========================= */
+
+.theme-note {
+
+    margin-top: 35px;
+
+    padding: 20px 15px;
+
+    opacity: 0;
+
+    transform: translateY(70px);
+
+}
+
+
+
+.theme-title {
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.theme-note p {
+
+    color: #aaa4ad;
+
+    font-size: 15px;
+
+    margin: 0;
+
+}
+
+
+
+/* =========================
+   HEADING ANIMATION
+========================= */
+
+.heading-show {
+
+    animation: headingSlide 2.5s ease forwards;
+
+}
+
+
+
+@keyframes headingSlide {
+
+    0% {
+
+        opacity: 0;
+
+        transform: translateY(100px);
+
+    }
+
+
+    100% {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+/* =========================
+   CARD ANIMATION
+========================= */
+
+.card-show {
+
+    animation: cardSlide 4.5s ease forwards;
+
+}
+
+
+
+@keyframes cardSlide {
+
+    0% {
+
+        opacity: 0;
+
+        transform: translateY(250px);
+
+    }
+
+
+    100% {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+/* =========================
+   THEME ANIMATION
+========================= */
+
+.theme-show {
+
+    animation: themeSlide 2.5s ease forwards;
+
+}
+
+
+
+@keyframes themeSlide {
+
+    0% {
+
+        opacity: 0;
+
+        transform: translateY(70px);
+
+    }
+
+
+    100% {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 576px) {
+
+
+    .invitation-page {
+
+        padding: 40px 12px;
+
+    }
+
+
+    .small-title {
+
+        font-size: 11px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    h1 {
+
+        font-size: 32px;
+
+    }
+
+
+    .heading-box p {
+
+        font-size: 15px;
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .birthday-card img {
+
+        width: 100%;
+
+        border-radius: 12px;
+
+    }
+
+
+    .theme-title {
+
+        font-size: 14px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .theme-note p {
+
+        font-size: 14px;
+
+    }
+
+}
