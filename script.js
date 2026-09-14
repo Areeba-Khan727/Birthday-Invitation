@@ -8,22 +8,16 @@ window.onload = function () {
     var heading =
         document.querySelector(".heading-box");
 
-
     var card =
         document.querySelector(".birthday-card");
-
 
     var theme =
         document.querySelector(".theme-note");
 
 
-    var confettiContainer =
-        document.querySelector(".confetti-container");
-
-
 
     /* =========================
-       SHOW HEADING
+       HEADING
     ========================== */
 
     heading.classList.add("heading-show");
@@ -31,7 +25,7 @@ window.onload = function () {
 
 
     /* =========================
-       SHOW CARD
+       CARD
     ========================== */
 
     setTimeout(function () {
@@ -43,7 +37,7 @@ window.onload = function () {
 
 
     /* =========================
-       SHOW THEME NOTE
+       END MESSAGE
     ========================== */
 
     setTimeout(function () {
@@ -55,100 +49,139 @@ window.onload = function () {
 
 
     /* =========================
-       CREATE CONFETTI
+       FALLING CONTAINER
     ========================== */
 
-    for (var i = 0; i < 70; i++) {
+    var container =
+        document.createElement("div");
+
+    container.classList.add(
+        "falling-container"
+    );
+
+    document.body.appendChild(container);
 
 
-        var confetti =
+
+    /* =========================
+       DECORATIONS
+    ========================== */
+
+    var decorations = [
+
+        /* Confetti - Zyada */
+
+        "▪",
+        "▪",
+        "▪",
+        "▪",
+        "▪",
+        "▪",
+        "•",
+        "•",
+        "•",
+        "•",
+        "✦",
+        "✦",
+        "✧",
+        "✧",
+
+        /* Flowers - Thore */
+
+        "🌸",
+        "🌸",
+        "🌷",
+        "🌼",
+
+        /* Leaves - Thori */
+
+        "🍃",
+        "🍃",
+        "🌿",
+
+        /* Small Curly Ribbons */
+
+        "〰",
+        "〰",
+        "〰",
+        "〜",
+        "〜"
+
+    ];
+
+
+
+    /* =========================
+       CREATE ITEMS
+    ========================== */
+
+    for (var i = 0; i < 100; i++) {
+
+
+        var item =
             document.createElement("div");
 
 
-        confetti.classList.add("confetti");
+        item.classList.add(
+            "falling-item"
+        );
 
 
 
-        /* Random Horizontal Position */
+        /* Random Decoration */
 
-        confetti.style.left =
-            Math.random() * 100 + "%";
-
-
-
-        /* Random Width */
-
-        confetti.style.width =
-            (5 + Math.random() * 7) + "px";
-
-
-
-        /* Random Height */
-
-        confetti.style.height =
-            (8 + Math.random() * 12) + "px";
-
-
-
-        /* Random Shape */
-
-        if (Math.random() > 0.5) {
-
-            confetti.style.borderRadius =
-                "50%";
-
-        }
-
-
-
-        /* Random Falling Speed */
-
-        confetti.style.animationDuration =
-            (3 + Math.random() * 3) + "s";
-
-
-
-        /* Random Delay */
-
-        confetti.style.animationDelay =
-            Math.random() * 2 + "s";
-
-
-
-        /* Confetti Colors */
-
-        var colors = [
-
-            "#ff4fa3",
-            "#ffd166",
-            "#7c5cff",
-            "#4dd4ff",
-            "#ffffff",
-            "#ff6b6b"
-
-        ];
-
-
-
-        var randomColor =
-            colors[
+        var randomDecoration =
+            decorations[
                 Math.floor(
-                    Math.random() * colors.length
+                    Math.random() *
+                    decorations.length
                 )
             ];
 
 
-
-        confetti.style.backgroundColor =
-            randomColor;
-
+        item.innerHTML =
+            randomDecoration;
 
 
-        /* Add Confetti To Page */
 
-        confettiContainer.appendChild(
-            confetti
-        );
+        /* Random Position */
+
+        item.style.left =
+            Math.random() * 100 + "%";
+
+
+
+        /* Different Sizes */
+
+        item.style.fontSize =
+            (12 + Math.random() * 14) + "px";
+
+
+
+        /* Different Falling Speeds */
+
+        item.style.animationDuration =
+            (5 + Math.random() * 6) + "s";
+
+
+
+        /* Different Starting Times */
+
+        item.style.animationDelay =
+            Math.random() * 8 + "s";
+
+
+
+        /* Random Rotation */
+
+        item.style.marginLeft =
+            (Math.random() * 20 - 10) + "px";
+
+
+
+        /* Add To Page */
+
+        container.appendChild(item);
 
     }
 

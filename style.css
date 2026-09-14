@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     background: #100817;
     color: white;
@@ -14,10 +13,10 @@ body {
 
 
 /* =========================
-   CONFETTI
+   FALLING DECORATIONS
 ========================= */
 
-.confetti-container {
+.falling-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -32,32 +31,53 @@ body {
 }
 
 
-.confetti {
+/* All Falling Items */
+
+.falling-item {
     position: absolute;
-
-    top: -30px;
-
-    width: 8px;
-    height: 15px;
+    top: -40px;
 
     opacity: 0;
 
-    animation-name: confettiFall;
+    animation-name: falling;
     animation-timing-function: linear;
-    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
 }
 
 
-@keyframes confettiFall {
+/* Natural Falling */
+
+@keyframes falling {
 
     0% {
-        top: -30px;
-        opacity: 1;
-        transform: translateX(0) rotate(0deg);
+        top: -40px;
+        opacity: 0;
+
+        transform:
+            translateX(0)
+            rotate(0deg);
     }
 
-    50% {
+    10% {
         opacity: 1;
+    }
+
+    30% {
+        transform:
+            translateX(35px)
+            rotate(100deg);
+    }
+
+    55% {
+        transform:
+            translateX(-35px)
+            rotate(200deg);
+    }
+
+    75% {
+        transform:
+            translateX(30px)
+            rotate(280deg);
     }
 
     100% {
@@ -65,12 +85,10 @@ body {
         opacity: 0;
 
         transform:
-            translateX(100px)
-            rotate(720deg);
+            translateX(-25px)
+            rotate(360deg);
     }
-
 }
-
 
 
 /* =========================
@@ -96,14 +114,12 @@ body {
 }
 
 
-
 /* =========================
    HEADING
 ========================= */
 
 .heading-box {
     opacity: 0;
-
     transform: translateY(100px);
 }
 
@@ -141,7 +157,6 @@ h1 {
 }
 
 
-
 /* =========================
    BIRTHDAY CARD
 ========================= */
@@ -173,9 +188,8 @@ h1 {
 }
 
 
-
 /* =========================
-   THEME NOTE
+   END MESSAGE
 ========================= */
 
 .theme-note {
@@ -205,9 +219,10 @@ h1 {
 
     font-size: 15px;
 
+    line-height: 1.7;
+
     margin: 0;
 }
-
 
 
 /* =========================
@@ -224,18 +239,14 @@ h1 {
 
     0% {
         opacity: 0;
-
         transform: translateY(100px);
     }
 
     100% {
         opacity: 1;
-
         transform: translateY(0);
     }
-
 }
-
 
 
 /* =========================
@@ -252,22 +263,18 @@ h1 {
 
     0% {
         opacity: 0;
-
         transform: translateY(250px);
     }
 
     100% {
         opacity: 1;
-
         transform: translateY(0);
     }
-
 }
 
 
-
 /* =========================
-   THEME ANIMATION
+   END MESSAGE ANIMATION
 ========================= */
 
 .theme-show {
@@ -280,18 +287,14 @@ h1 {
 
     0% {
         opacity: 0;
-
         transform: translateY(70px);
     }
 
     100% {
         opacity: 1;
-
         transform: translateY(0);
     }
-
 }
-
 
 
 /* =========================
@@ -304,42 +307,31 @@ h1 {
         padding: 40px 12px;
     }
 
-
     .small-title {
         font-size: 11px;
-
         letter-spacing: 3px;
     }
-
 
     h1 {
         font-size: 32px;
     }
 
-
     .heading-box p {
         font-size: 15px;
-
         margin-bottom: 25px;
     }
 
-
     .birthday-card img {
         width: 100%;
-
         border-radius: 12px;
     }
 
-
     .theme-title {
         font-size: 14px;
-
         letter-spacing: 2px;
     }
-
 
     .theme-note p {
         font-size: 14px;
     }
-
 }
