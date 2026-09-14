@@ -6,47 +6,93 @@
 
 
 body {
-
     background: #100817;
-
     color: white;
-
     font-family: "Playfair Display", serif;
-
     overflow-x: hidden;
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    pointer-events: none;
+    overflow: hidden;
+
+    z-index: 20;
+}
+
+
+.confetti {
+    position: absolute;
+
+    top: -30px;
+
+    width: 8px;
+    height: 15px;
+
+    opacity: 0;
+
+    animation-name: confettiFall;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes confettiFall {
+
+    0% {
+        top: -30px;
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 110vh;
+        opacity: 0;
+
+        transform:
+            translateX(100px)
+            rotate(720deg);
+    }
 
 }
 
 
 
-/* Main Page */
+/* =========================
+   MAIN PAGE
+========================= */
 
 .invitation-page {
-
     min-height: 100vh;
 
     padding: 60px 15px;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
 }
 
 
-
-/* Main Container */
-
 .container {
-
     width: 100%;
-
     max-width: 700px;
 
     text-align: center;
-
 }
 
 
@@ -56,17 +102,13 @@ body {
 ========================= */
 
 .heading-box {
-
     opacity: 0;
 
     transform: translateY(100px);
-
 }
 
 
-
 .small-title {
-
     color: #d8d8d8;
 
     font-size: 14px;
@@ -74,13 +116,10 @@ body {
     letter-spacing: 4px;
 
     margin-bottom: 15px;
-
 }
 
 
-
 h1 {
-
     color: #ffffff;
 
     font-size: 48px;
@@ -88,13 +127,10 @@ h1 {
     font-weight: 600;
 
     margin-bottom: 15px;
-
 }
 
 
-
 .heading-box p {
-
     color: #c8c1cc;
 
     font-size: 18px;
@@ -102,7 +138,6 @@ h1 {
     line-height: 1.6;
 
     margin-bottom: 35px;
-
 }
 
 
@@ -112,19 +147,15 @@ h1 {
 ========================= */
 
 .birthday-card {
-
     width: 100%;
 
     opacity: 0;
 
     transform: translateY(250px);
-
 }
 
 
-
 .birthday-card img {
-
     width: 100%;
 
     max-width: 600px;
@@ -137,8 +168,8 @@ h1 {
 
     border-radius: 18px;
 
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
-
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.65);
 }
 
 
@@ -148,7 +179,6 @@ h1 {
 ========================= */
 
 .theme-note {
-
     margin-top: 35px;
 
     padding: 20px 15px;
@@ -156,13 +186,10 @@ h1 {
     opacity: 0;
 
     transform: translateY(70px);
-
 }
 
 
-
 .theme-title {
-
     color: #ffffff;
 
     font-size: 17px;
@@ -170,19 +197,15 @@ h1 {
     letter-spacing: 3px;
 
     margin-bottom: 10px;
-
 }
 
 
-
 .theme-note p {
-
     color: #aaa4ad;
 
     font-size: 15px;
 
     margin: 0;
-
 }
 
 
@@ -192,30 +215,23 @@ h1 {
 ========================= */
 
 .heading-show {
-
-    animation: headingSlide 2.5s ease forwards;
-
+    animation:
+        headingSlide 2.5s ease forwards;
 }
-
 
 
 @keyframes headingSlide {
 
     0% {
-
         opacity: 0;
 
         transform: translateY(100px);
-
     }
 
-
     100% {
-
         opacity: 1;
 
         transform: translateY(0);
-
     }
 
 }
@@ -227,30 +243,23 @@ h1 {
 ========================= */
 
 .card-show {
-
-    animation: cardSlide 4.5s ease forwards;
-
+    animation:
+        cardSlide 4.5s ease forwards;
 }
-
 
 
 @keyframes cardSlide {
 
     0% {
-
         opacity: 0;
 
         transform: translateY(250px);
-
     }
 
-
     100% {
-
         opacity: 1;
 
         transform: translateY(0);
-
     }
 
 }
@@ -262,30 +271,23 @@ h1 {
 ========================= */
 
 .theme-show {
-
-    animation: themeSlide 2.5s ease forwards;
-
+    animation:
+        themeSlide 2.5s ease forwards;
 }
-
 
 
 @keyframes themeSlide {
 
     0% {
-
         opacity: 0;
 
         transform: translateY(70px);
-
     }
 
-
     100% {
-
         opacity: 1;
 
         transform: translateY(0);
-
     }
 
 }
@@ -298,61 +300,46 @@ h1 {
 
 @media (max-width: 576px) {
 
-
     .invitation-page {
-
         padding: 40px 12px;
-
     }
 
 
     .small-title {
-
         font-size: 11px;
 
         letter-spacing: 3px;
-
     }
 
 
     h1 {
-
         font-size: 32px;
-
     }
 
 
     .heading-box p {
-
         font-size: 15px;
 
         margin-bottom: 25px;
-
     }
 
 
     .birthday-card img {
-
         width: 100%;
 
         border-radius: 12px;
-
     }
 
 
     .theme-title {
-
         font-size: 14px;
 
         letter-spacing: 2px;
-
     }
 
 
     .theme-note p {
-
         font-size: 14px;
-
     }
 
 }
